@@ -1,0 +1,38 @@
+This is a baseball themed store database I created as my first SQL project.
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, cost INTEGER, quantity INTEGER, aisle INTEGER);
+
+INSERT INTO store VALUES (1, "baseballs", 4.99, 2.99, 1200, 8);
+INSERT INTO store VALUES (2, "gloves", 99.99, 49.99, 84, 1);
+INSERT INTO store VALUES (3, "bats", 349.99, 249.99, 168, 3);
+INSERT INTO store VALUES (4, "helmets", 49.99, 34.99, 55, 2);
+INSERT INTO store VALUES (5, "cleats", 69.99, 49.99, 301, 5);
+INSERT INTO store VALUES (6, "equipment bags", 79.99, 59.99, 90, 4);
+INSERT INTO store VALUES (7, "batting gloves", 39.99, 24.99, 77, 1);
+INSERT INTO store VALUES (8, "whiffle balls", 2.99, .99, 400, 8);
+INSERT INTO store VALUES (9, "pants", 29.99, 19.99, 124, 7);
+INSERT INTO store VALUES (10, "shirts", 19.99, 12.99, 68, 7);
+INSERT INTO store VALUES (11, "socks", 7.99, 4.99, 135, 2);
+INSERT INTO store VALUES (12, "belts", 9.99, 4.99, 88, 2);
+INSERT INTO store VALUES (13, "nets", 149.99, 99.99, 32, 1);
+INSERT INTO store VALUES (14, "tees", 89.99, 59.99, 27, 5);
+INSERT INTO store VALUES (15, "pitching machine", 1499.99, 999.99, 8, 2);
+INSERT INTO store VALUES (16, "catcher gear", 269.99, 199.99, 44, 3);
+INSERT INTO store VALUES (17, "buckets", 3.99, 1.99, 66, 4);
+INSERT INTO store VALUES (18, "cones", 4.99, 2.99, 38, 2);
+INSERT INTO store VALUES (19, "scorebooks", 7.99, 2.99, 70, 7);
+INSERT INTO store VALUES (20, "lineup cards", 6.99, 3.99, 76, 9);
+INSERT INTO store VALUES (21, "sunflower seeds", 2.99, .99, 24, 1);
+INSERT INTO store VALUES (22, "bubblegum", 1.99, .79, 52, 1);
+
+SELECT * FROM store WHERE price < 5 GROUP BY quantity;
+
+SELECT * FROM store WHERE price >50 ORDER BY quantity;
+
+SELECT * FROM store ORDER BY price;
+
+SELECT SUM(quantity) FROM store;
+
+SELECT * FROM store ORDER BY aisle;
+
+SELECT MAX(price) FROM store;
