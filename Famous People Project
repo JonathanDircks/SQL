@@ -1,0 +1,35 @@
+/* This is a SQL project that I created while learing on Kahn Academy. It consists of 3 tables along with JOIN queries*/
+
+CREATE TABLE famous_athletes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, sport TEXT, team TEXT);
+INSERT INTO famous_athletes (name, sport, team) VALUES ("George Kittle", "football", "49ers");
+INSERT INTO famous_athletes (name, sport, team) VALUES ("Brandon Crawford", "baseball", "Giants");
+INSERT INTO famous_athletes (name, sport, team) VALUES ("Aaron Judge", "baseball", "Yankees");
+INSERT INTO famous_athletes (name, sport, team) VALUES ("Patrick Mahomes", "football", "Chiefs");
+INSERT INTO famous_athletes (name, sport, team) VALUES ("Steph Curry", "basketball", "Warriors");
+INSERT INTO famous_athletes (name, sport, team) VALUES ("LeBron James", "basketball", "Lakers");
+
+CREATE TABLE athlete_history (id INTEGER PRIMARY KEY AUTOINCREMENT, age INTEGER, college TEXT);
+INSERT INTO athlete_history (age, college) VALUES (29, "Iowa");
+INSERT INTO athlete_history (age, college) VALUES (36, "UCLA");
+INSERT INTO athlete_history (age, college) VALUES (30, "CSU Fresno");
+INSERT INTO athlete_history (age, college) VALUES (27, "Texas Tech");
+INSERT INTO athlete_history (age, college) VALUES (35, "Davidson");
+INSERT INTO athlete_history (age, college) VALUES (38, "N/A");
+
+CREATE TABLE athlete_stats (id INTEGER PRIMARY KEY AUTOINCREMENT, position TEXT, years_played INTEGER);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Tight End", 6);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Shortstop", 13);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Right Field", 8);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Quarterback", 6);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Point Guard", 14);
+INSERT INTO athlete_stats (position, years_played) VALUES ("Power Forward", 19);
+
+SELECT famous_athletes.name, famous_athletes.sport, famous_athletes.team, athlete_history.college 
+FROM famous_athletes 
+LEFT OUTER JOIN athlete_history 
+ON famous_athletes.id=athlete_history.id;
+
+SELECT famous_athletes.name, famous_athletes.sport, athlete_stats.position, athlete_stats.years_played 
+FROM famous_athletes 
+JOIN athlete_stats 
+ON famous_athletes.id=athlete_stats.id;
